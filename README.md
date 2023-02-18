@@ -1,1 +1,1 @@
-# BQL2
+# A bond screening app made in the BQuant Platform.
