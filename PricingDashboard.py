@@ -36,7 +36,10 @@ def process_data(df):
     df['Price Change'] = df['Price'].diff(periods=1)
     df['Price Highlight'] = 'None'
     df.loc[(abs(df['Price Change']) / df['Price'].shift(1)) >= 0.1, 'Price Highlight'] = 'Yellow'
+    df.loc[(abs(df['Price Change']) / df['Price'].shift(1)) >= 0.2, 'Price Highlight'] = 'Orange'
+    df.loc[(abs(df['Price Change']) / df['Price'].shift(1)) >= 0.3, 'Price Highlight'] = 'Red'
     return df
+
 
 # Step 3: Get and process data
 securities_df = pd.read_csv('securities.csv')
